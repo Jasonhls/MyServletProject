@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!--添加自定义的Servlet的配置-->
+    <servlet>
+        <servlet-name>MyServlet</servlet-name>
+        <servlet-class>com.cn.MyServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MyServletTwo</servlet-name>
+        <servlet-class>com.cn.MyServletTwo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyServlet</servlet-name>
+        <!--注意：这里使用idea自带的tomcat启动项目，配置了路径/demo，因此请求的时候必须加上/demo，比如localhost:8080/demo/abc-->
+        <url-pattern>/abc</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MyServletTwo</servlet-name>
+        <url-pattern>/def</url-pattern>
+    </servlet-mapping>
+</web-app>
